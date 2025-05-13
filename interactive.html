@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afghan Proverbs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  
+<link rel="icon" href="img/favicon_io (7)/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io (7)/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io (7)/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io (7)/favicon-16x16.png">
+<link rel="manifest" href="img/favicon_io (7)/site.webmanifest">
+  <style>
+    :root {
+      --primary: #5D3FD3;
+      --accent: #C3B1E1;
+      --bg-light: #f1f1f9;
+      --bg-gradient: linear-gradient(135deg, #f9f9ff, #eae6f8);
+      --text-dark: #1c1c1c;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-top: 100px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 70px;
+      transition: transform var(--transition);
+    }
+
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+
+   
+
+    @keyframes titleGlow {
+      0%, 100% { text-shadow: 0 0 10px #2f2f2d; }
+      50% { text-shadow: 0 0 20px #3e3e3d, 0 0 30px #ffffff; }
+    }
+
+  
+    
+
+    footer {
+      background: white;
+      color: #151515;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 18px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+
+      .search-bar {
+        padding: 0 10px;
+      }
+
+      .search-wrapper {
+        max-width: 100%;
+      }
+    }
+
+    .interactive-wall {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  background: var(--glass-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.interactive-wall h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.interactive-wall p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.proverb-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.proverb-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.proverb-form input,
+.proverb-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.proverb-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.proverb-form input:focus,
+.proverb-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(93, 63, 211, 0.2);
+}
+
+.proverb-form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.proverb-form button:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.interactive-wall h2{
+animation: titleGlow 3s ease-in-out infinite;
+      }
+  
+      @keyframes titleGlow {
+        0%, 100% { text-shadow: 0 0 10px #252522; }
+        50% { text-shadow: 0 0 20px #4a13ca, 0 0 30px #ffffff; }
+      }
+  
+ 
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="img/cc-removebg-preview.png" alt="Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="detail.html">Proverb Detail</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="interactive-wall">
+    <h2>Interactive Wall</h2>
+    <p>Share your favorite Afghan proverb and explain its meaning!</p>
+    <form class="proverb-form">
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="proverb">Proverb</label>
+        <textarea id="proverb" name="proverb" placeholder="Write the proverb here..." required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="explanation">Explanation</label>
+        <textarea id="explanation" name="explanation" placeholder="Explain what the proverb means..." required></textarea>
+      </div>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  
+
+ 
+
+
+  <footer>
+    <p>Afghan Proverbs © 2025 | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afghan Proverbs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  
+<link rel="icon" href="img/favicon_io (7)/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io (7)/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io (7)/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io (7)/favicon-16x16.png">
+<link rel="manifest" href="img/favicon_io (7)/site.webmanifest">
+  <style>
+    :root {
+      --primary: #5D3FD3;
+      --accent: #C3B1E1;
+      --bg-light: #f1f1f9;
+      --bg-gradient: linear-gradient(135deg, #f9f9ff, #eae6f8);
+      --text-dark: #1c1c1c;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 80px;
+      direction: rtl;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+
+    .logo img {
+      height: 70px;
+      transition: transform var(--transition);
+    }
+
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      margin: 60px 20px 20px;
+      animation: titleGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+      0%, 100% { text-shadow: 0 0 10px #13130b; }
+      50% { text-shadow: 0 0 20px #3e3e3d, 0 0 30px #ffffff; }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+      color: #333;
+    }
+
+
+    footer {
+      background: white;
+      color: #151515;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 18px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+      }
+
+      
+    .container {
+      display: flex;
+      gap: 20px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .card-photo {
+      flex: 1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card-photo:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-text {
+      flex: 1.5;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .original {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .translation {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #333;
+      text-align: center;
+    }
+
+    .meaning {
+      margin-top: 20px;
+      background: rgba(93, 63, 211, 0.15);
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #222;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .card-text:hover .meaning {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card-photo, .card-text {
+        width: 100%;
+      }
+    }
+
+    .gallery-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.gallery-btn:hover {
+  background-color: #3d27a5;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="img/cc-removebg-preview.png" alt="Logo">
+      </a>
+      <div class="nav-links">
+        <a href="interactive.html">Interactive Wall</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Proverbs Details </h1>
+  </header>
+
+  
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/p.jpg" alt="Snow on roof">
+    </div>
+    <div class="card-text">
+      <div class="original">هر که بامش بیش، برفش بیشتر</div>
+      <div class="translation">The higher the roof, the more snow it catches.</div>
+      <div class="meaning">With more wealth or power comes more responsibility.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/images.jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">قطره قطره  دریا می شود</div>
+      <div class="translation">Drop by drop becomes a sea.</div>
+      <div class="meaning">Small efforts over time lead to great results.</div>
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/ll.jpg" alt="Fire">
+    </div>
+    <div class="card-text">
+      <div class="original">آتش که گرفت، خشک و تر می‌سوزد</div>
+      <div class="translation">When fire catches, it burns both dry and wet.</div>
+      <div class="meaning">When disaster strikes, it affects everyone — innocent or guilty.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/pp.jpeg" alt="Dog tail">
+    </div>
+    <div class="card-text">
+      <div class="original">دم سگ را اگر چهل سال در لوله بگذاری، باز هم کج است</div>
+      <div class="translation">If you keep a dog's tail in a pipe for 40 years, it’ll still be curved.</div>
+      <div class="meaning">Some things never change, no matter how much you try.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/ff.jpg" alt="Fish">
+    </div>
+    <div class="card-text">
+      <div class="original">ماهی را هر وقت از آب بگیری تازه‌ست</div>
+      <div class="translation">Whenever you catch the fish, it's fresh.</div>
+      <div class="meaning">It's never too late to start something good.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/hh.jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">کار از محکم کاری عیب نمی‌کند</div>
+      <div class="translation">Being thorough never hurts.</div>
+      <div class="meaning">“Being thorough never hurts.”</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/gg.jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">هر که باد بکارد، طوفان درو می‌کند</div>
+      <div class="translation">He who sows the wind shall reap the storm.</div>
+      <div class="meaning">Actions have consequences, often harsher than expected.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/aa.jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">تا شغال زنده است، کلاغ سیر نمی‌شود</div>
+      <div class="translation">As long as the jackal lives, the crow won't be full.</div>
+      <div class="meaning">Warns of competition or threat keeping someone from thriving.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/images (1).jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">خانه جنگی آباد نمی‌شود</div>
+      <div class="translation">A house divided cannot prosper.</div>
+      <div class="meaning">Unity brings strength; conflict brings ruin.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/dd.jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">از دل برود هر آنکه از دیده برفت</div>
+      <div class="translation">Out of sight, out of mind.</div>
+      <div class="meaning">When people are apart, feelings often fade.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/images (2).jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">خشت اول چون نهد معمار کج، تا ثریا می‌رود دیوار کج</div>
+      <div class="translation">If the first brick is laid crooked, the wall will be crooked to the top.</div>
+      <div class="meaning">If something starts wrong, it often ends wrong.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/images (3).jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">نیش عقرب نه از ره کین است، اقتضای طبیعتش این است</div>
+      <div class="translation">The scorpion's sting is not out of hatred—it is its nature.</div>
+      <div class="meaning">Some people harm because it's in their nature, not out of malice.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-photo">
+      <img src="img/vv.jpg" alt="Drop of water">
+    </div>
+    <div class="card-text">
+      <div class="original">درخت هرچه پربارتر، افتاده‌تر</div>
+      <div class="translation">The fuller the tree, the more it bows.</div>
+      <div class="meaning">The wiser or greater a person is, the more humble they are.</div>
+    </div>
+  </div>
+
+
+
+  <a href="gallery.html" class="gallery-btn">Go Back to Gallery</a>
+
+</body>
+</html>
